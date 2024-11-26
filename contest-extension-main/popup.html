@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Contests</title>
+    <style>
+        .wrapper { 
+            height: 100%;
+            width: 100%;
+            left:0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+            background-size: 1800% 1800%;
+
+            -webkit-animation: rainbow 18s ease infinite;
+            -z-animation: rainbow 18s ease infinite;
+            -o-animation: rainbow 18s ease infinite;
+            animation: rainbow 18s ease infinite;
+        }
+
+        @-webkit-keyframes rainbow {
+            0%{background-position:0% 82%}
+            50%{background-position:100% 19%}
+            100%{background-position:0% 82%}
+        }
+        @-moz-keyframes rainbow {
+            0%{background-position:0% 82%}
+            50%{background-position:100% 19%}
+            100%{background-position:0% 82%}
+        }
+        @-o-keyframes rainbow {
+            0%{background-position:0% 82%}
+            50%{background-position:100% 19%}
+            100%{background-position:0% 82%}
+        }
+        @keyframes rainbow { 
+            0%{background-position:0% 82%}
+            50%{background-position:100% 19%}
+            100%{background-position:0% 82%}
+        }
+        body {
+            margin: 0 auto;
+            min-width: 700px;
+            min-height: auto;
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            /* background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); */
+            /* background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); */
+            /* background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%); */
+            /* background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%); */
+            background-image: linear-gradient(-225deg, #FFFEFF 0%, #ccfffe 100%);
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            /* color: black; */
+            font-family: monospace;
+            /* background: -webkit-linear-gradient(0deg, red 20%, orange 10%, yellow 5%, green, blue, indigo, violet); */
+            background: -webkit-linear-gradient(0deg, red 40%, rgb(127, 63, 255) 70%, blue 80%, rgb(85, 32, 210) 90%, rgb(245, 137, 245) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .flex{
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        #contests {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .my-3 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-xl {
+            font-size: 1.3em;
+            background: -webkit-linear-gradient(180deg, #f9a7d0 0%,#f12711 50% ,#9b0034 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .text-blue-600 {
+            color: blue;
+        }
+
+        .text-black{
+            color: black;
+        }
+
+        .text-purple-600 {
+            color: purple;
+        }
+
+        .text-green-600 {
+            color: green;
+        }
+
+        .text-red-600 {
+            color:darkblue
+        }
+
+        .text-gray-800 {
+            color: rgb(128, 128, 128);
+        }
+
+        .text-gray-700 {
+            color: rgb(41, 41, 41);
+        }
+
+        .text-gray-600 {
+            color: darkgray;
+        }
+
+        .bg-slate-200 {
+            background-color: rgb(200, 200, 200);
+        }
+
+
+        .table-fixed {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .table-fixed th,
+        .table-fixed td {
+            border: 1px solid gray;
+            padding: 10px;
+        }
+
+        .text-sm {
+            font-size: 12px;
+        }
+
+        .text-md{
+            font-size: 14px; 
+        }
+
+        .text-xl{
+            font-size: 17px;
+        }
+
+        .rounded-lg {
+            border-radius: 8px;
+        }
+
+        .border {
+            border: 1px solid gray;
+        }
+
+        .px-4 {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        a{
+            color: chocolate;
+        }
+
+        a:hover{
+            color: darkred;
+        }
+
+        .py-2 {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+        .text-diff{
+            font-family: monospace;
+            font-size: x-large;
+            /* gradient color */
+            color: linear-gradient(90deg, #f12711 0%, #f5af19 100%);
+        }
+
+        .font-mono {
+            font-family: monospace;
+        }
+
+
+    </style>
+</head>
+<body class="bg-slate-200">
+    <h1>Upcoming Contests</h1>
+    <div id="contests">
+        <div id="codeforces" class="my-3">
+            <h2 class="text-xl font-bold text-center font-mono">Codeforces</h2>
+            <div id="loader" class="text-center text-green-600 font-mono text-diff font-bold">Loading...</div>
+            <table class="table-fixed text-md text-violet-600 font-mono rounded-lg border border-gray-600">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2 text-gray-700 border border-gray-600">Contest Name</th>
+                        <th class="px-4 py-2 text-gray-700 border border-gray-600">Date</th>
+                        <th class="px-4 py-2 text-gray-700 border border-gray-600">Duration</th>
+                        <th class="px-4 py-2 text-gray-700 border border-gray-600">Register</th>
+                    </tr>
+                </thead>
+                <tbody id="contestList" class="text-center">
+                    
+                </tbody>
+            </table>
+        </div>
+        <div id="codechef" class="my-3 text-center flex flex-col">
+            <div class="flex justify-center items-center">
+                <div class="text-purple-600 font-bold text-xl mr-2">Codechef</div>
+                <span class="text-sm text-black font-mono font-bold"> (Every Wednesday at 8:00pm)</span>
+            </div>
+            <a href="https://www.codechef.com/contests" class="text-center text-md font-bold font-mono">Register</a>
+        </div>
+        <div id="gfg" class="my-3 text-center flex">
+            <div class="flex justify-center items-center">
+                <div class="text-green-600 font-bold text-xl mr-2">GeeksforGeeks</div>
+                <span class="text-sm text-black font-mono font-bold"> (Every Sunday at 8:00pm)</span>
+            </div>
+            <a href="https://www.geeksforgeeks.org/events/rec/gfg-weekly-coding-contest?itm_source=geeksforgeeks&itm_medium=main_header&itm_campaign=contests" class="text-center font-mono text-md font-bold">Register</a>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

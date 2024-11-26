@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "version": "1.0",
+    "name": "Contest Remainder",
+    "description": "A simple extension to manage contests",
+    "permissions": [
+        "tabs",
+        "storage",
+        "bookmarks"
+    ],
+    "icons": {
+        "16":"icons/metamask.png",
+        "32":"icons/metamask_2.png",
+        "48":"icons/metamask_3.png",
+        "128":"icons/metamask_4.png"
+
+    },
+    "action": {
+        "default_icon": "icons/metamask.png",
+        "default_popup": "popup.html"
+    }
+}
